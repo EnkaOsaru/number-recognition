@@ -1,0 +1,54 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+body {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: grid;
+  grid-template-columns: 25vw auto;
+  column-gap: 5rem;
+  place-content: center;
+
+  font-size: 1.6rem;
+  font-family: "Courier New", Courier, monospace;
+}
+
+#bar-container {
+  grid-column: 1 / 2;
+  display: grid;
+  align-items: stretch;
+}
+
+.bar {
+  display: grid;
+  grid-template-columns: 3rem auto;
+}
+
+.bar > .number {
+  content: attr(data-index) ": ";
+  grid-column: 1 / 2;
+  place-self: center;
+}
+
+.bar > .display {
+  align-self: center;
+  height: 1.6rem;
+  background-color: cornflowerblue;
+  transform-origin: left center;
+  transition: transform 50ms linear;
+  transform: scaleX(0);
+}
+
+canvas {
+  grid-column: 2 / 3;
+  border: #000000 solid 1px;
+}
